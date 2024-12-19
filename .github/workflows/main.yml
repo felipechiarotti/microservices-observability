@@ -3,11 +3,11 @@ name: observability-ci
 on:
   pull_request:
     branches:
-    - development
+    - develop
     - master
   push:
     branches:
-    - development
+    - develop
   workflow_dispatch:
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
           dotnet-version: 5.0.x
 
       - name: Install Prerequisites
-        run: sudo apt install libssl-dev
+        run: sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb
 
       - name: Restore dependencies
         run: dotnet restore aspnetrun-microservices.sln
