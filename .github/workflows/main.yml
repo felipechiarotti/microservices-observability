@@ -22,14 +22,8 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - name: Install Prerequisites
-        run: sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb
-
-      - name: Restore dependencies
-        run: dotnet restore aspnetrun-microservices.sln
-
       - name: Build
-        run: dotnet build --no-restore aspnetrun-microservices.sln
+        run: dotnet build aspnetrun-microservices.sln
 
       - name: Test
         run: dotnet test aspnetrun-microservices.sln
